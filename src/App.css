@@ -1,0 +1,125 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.app-container {
+  padding: 2rem 3rem;
+}
+
+.input-row {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.input-row input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.input-title {
+  width: 240px;
+}
+
+.input-content {
+  width: 360px;
+}
+
+.btn-primary {
+  padding: 0.5rem 0.75rem;
+  background: #0057ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.todo-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.todo-table th,
+.todo-table td {
+  border: 1px solid #e6e6e6;
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+}
+
+.todo-table thead th {
+  background: #098297;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actions button {
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn-edit {
+  background: #9b660a;
+  border-color: #ffd59e;
+}
+
+.btn-delete {
+  background: #9b660a;
+  border-color: #ffb3b3;
+}
+
+.btn-save {
+  background: #9b660a;
+  border-color: #9fd9b8;
+}
+
+.btn-cancel {
+  background: #9b660a;
+  border-color: #ddd;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
