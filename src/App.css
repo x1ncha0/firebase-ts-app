@@ -41,8 +41,10 @@
 
 .todo-table {
   width: 100%;
+  min-width: 700px;
   border-collapse: collapse;
   margin-top: 1rem;
+  table-layout: fixed;
 }
 
 .todo-table th,
@@ -58,7 +60,8 @@
 
 .actions {
   display: flex;
-  gap: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.4rem;
 }
 
 .actions button {
@@ -86,6 +89,16 @@
 .btn-cancel {
   background: #9b660a;
   border-color: #ddd;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.todo-table td,
+.todo-table th {
+  word-break: break-word;
 }
 
 .logo {

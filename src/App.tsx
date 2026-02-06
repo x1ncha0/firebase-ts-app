@@ -118,61 +118,63 @@ function App() {
         <button className="btn-primary" onClick={addTodo}>Add</button>
       </div>
 
-      <table className="todo-table">
-        <thead>
-          <tr>
-            <th>No.</th>
-            <th>Title</th>
-            <th>Content (addition)</th>
-            <th>Create Time</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {todos.map((t, idx) => (
-            <tr key={t.id}>
-              <td>{idx + 1}</td>
-
-              {editingId === t.id ? (
-                <>
-                  <td>
-                    <input
-                      value={editingTitle}
-                      onChange={(e) => setEditingTitle(e.target.value)}
-                    />
-                  </td>
-
-                  <td>
-                    <input
-                      value={editingContent}
-                      onChange={(e) => setEditingContent(e.target.value)}
-                    />
-                  </td>
-
-                  <td>{t.createdAt ? t.createdAt.toDate().toLocaleString() : ""}</td>
-
-                  <td className="actions">
-                    <button className="btn-save" onClick={saveEdit}>💾 Save</button>
-                    <button className="btn-cancel" onClick={cancelEdit}>Cancel</button>
-                  </td>
-                </>
-              ) : (
-                <>
-                  <td>{t.title}</td>
-                  <td>{t.content || ""}</td>
-                  <td>{t.createdAt ? t.createdAt.toDate().toLocaleString() : ""}</td>
-
-                  <td className="actions">
-                    <button className="btn-edit" onClick={() => startEdit(t)}>✏️ Edit</button>
-                    <button className="btn-delete" onClick={() => deleteTodo(t.id)}>❌ Delete</button>
-                  </td>
-                </>
-              )}
+      <div className="table-wrapper">
+        <table className="todo-table">
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Title</th>
+              <th>Content (addition)</th>
+              <th>Create Time</th>
+              <th>Action</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+
+          <tbody>
+            {todos.map((t, idx) => (
+              <tr key={t.id}>
+                <td>{idx + 1}</td>
+
+                {editingId === t.id ? (
+                  <>
+                    <td>
+                      <input
+                        value={editingTitle}
+                        onChange={(e) => setEditingTitle(e.target.value)}
+                      />
+                    </td>
+
+                    <td>
+                      <input
+                        value={editingContent}
+                        onChange={(e) => setEditingContent(e.target.value)}
+                      />
+                    </td>
+
+                    <td>{t.createdAt ? t.createdAt.toDate().toLocaleString() : ""}</td>
+
+                    <td className="actions">
+                      <button className="btn-save" onClick={saveEdit}>💾 Save</button>
+                      <button className="btn-cancel" onClick={cancelEdit}>Cancel</button>
+                    </td>
+                  </>
+                ) : (
+                  <>
+                    <td>{t.title}</td>
+                    <td>{t.content || ""}</td>
+                    <td>{t.createdAt ? t.createdAt.toDate().toLocaleString() : ""}</td>
+
+                    <td className="actions">
+                      <button className="btn-edit" onClick={() => startEdit(t)}>✏️ Edit</button>
+                      <button className="btn-delete" onClick={() => deleteTodo(t.id)}>❌ Delete</button>
+                    </td>
+                  </>
+                )}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
