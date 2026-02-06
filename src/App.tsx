@@ -1,4 +1,4 @@
-import './App.css';
+import './modern.css';
 import { useEffect, useState } from "react";
 import { collection, addDoc, getDocs, serverTimestamp, query, orderBy, Timestamp, deleteDoc, doc, updateDoc  } from "firebase/firestore";
 import { db } from "./firebase";
@@ -98,7 +98,8 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1>🔥 Firebase Todo</h1>
+      <h1>Todo list app</h1>
+      <h2>Use 🔥 Firebase and TypeScript</h2>
 
       <div className="input-row">
         <input
@@ -111,7 +112,7 @@ function App() {
         <input
           value={content}
           onChange={(e) => setContent(e.target.value)}
-          placeholder="Content (addition)"
+          placeholder="Content"
           className="input-content"
         />
 
@@ -124,8 +125,8 @@ function App() {
             <th>No.</th>
             <th>Title</th>
             <th>Content (addition)</th>
-            <th>Create Time</th>
-            <th>Action</th>
+            <th className="time">Create Time</th>
+            <th className="actions">Action</th>
           </tr>
         </thead>
 
